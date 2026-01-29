@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administración</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body>
+    <div id="panel-container" class="hidden">
+        <div class="panel-header">
+            <div class="header-left">
+                <h2>Admin Panel</h2>
+                <div class="status-indicator">
+                    <div class="status-dot"></div>
+                    <span>Live</span>
+                </div>
+            </div>
+            <div class="header-right">
+                <div class="search-container">
+                    <input type="text" id="search-bar" placeholder="Search players...">
+                    <i data-lucide="search" class="search-icon"></i>
+                </div>
+            </div>
+        </div>
+        <div id="player-list-content" class="player-list-content"></div>
+        <div class="panel-footer">
+            <button id="close-button" class="close-button">
+                <i data-lucide="x" class="button-icon"></i>
+                Close Panel
+            </button>
+        </div>
+    </div>
+
+    <div id="give-car-modal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Give Vehicle</h3>
+                <button class="modal-close" id="modal-close-btn">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <p>Enter the vehicle spawn code</p>
+            <input type="text" id="car-model-input" placeholder="adder">
+            <div class="modal-buttons">
+                <button id="confirm-give-car" class="btn-primary">
+                    <i data-lucide="car" class="button-icon"></i>
+                    Give Vehicle
+                </button>
+                <button id="cancel-give-car" class="btn-secondary">Cancel</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+        });
+    </script>
+</body>
+</html>
